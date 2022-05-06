@@ -1,0 +1,37 @@
+<h3>Update Item Details</h3>
+<div style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Item No</label>
+      <input type="text" class="form-control" id="itemId" 
+      required [(ngModel)]="item.itemId" name="itemId">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Item Name</label>
+      <input type="text" class="form-control" id="item_name" 
+      required [(ngModel)]="item.item_name" name="item_name">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Item Category</label>
+      <input type="text" class="form-control" id="item_category" 
+      required [(ngModel)]="item.item_category" name="item_category">
+    </div>
+
+    <div class="form-group">
+        <label for="name">Item Price</label>
+        <input type="text" class="form-control" id="item_price" 
+        required [(ngModel)]="item.item_price" name="item_price">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Item Status</label>
+      <input type="text" class="form-control" id="item_status" 
+      required [(ngModel)]="item.item_status" name="item_status">
+  </div>
+
+    <button type="submit" class="btn btn-success mt-3 mb-3">Submit</button>
+  </form>
+</div>
+<hr>

@@ -1,0 +1,22 @@
+<h2>Item Details</h2> 
+
+<hr/>
+<div *ngIf="item">
+  <div>
+    <label><b>Item No : </b></label> {{item.itemId}}
+  </div>
+  <div>
+    <label><b>item Name : </b></label> {{item.item_name}}
+  </div>
+  <div>
+    <label><b>item Category : </b></label> {{item.item_category}}
+  </div>  
+  <div>
+    <label><b>item price : </b></label> {{item.item_price}}
+  </div>
+  <div>
+    <label><b>item status : </b></label> {{item.item_status}}
+  </div>
+</div>
+<button (click)="list()" class="btn btn-primary mt-3 mb-3">Back to home</button>
+<hr>

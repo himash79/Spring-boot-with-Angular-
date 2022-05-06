@@ -1,0 +1,66 @@
+<div class="panel panel-primary">
+    <div class="row">
+      <div class="col-3">
+        <h2>Products</h2>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-3">
+        <label for="itemAvailability" class="font-weight-bold">Item status</label>
+        <select (change)="filterAvailableItems()" [(ngModel)]="selectValue" class="form-control"
+         name="itemAvailable" id="itemAvailable">
+          <option value="">--SELECT--</option>
+          <option value="true">Available</option>
+          <option value="false">N/A</option>
+        </select>
+      </div>
+      <div class="col-3">
+        <label for="filterByPrice" class="font-weight-bold">Item Price</label>
+        <div class="input-group">
+          <input type="text" name="price filter" [(ngModel)]="filterPriceField" id="priceFilter"
+          class="form-control" placeholder="Price Range">
+          <div class="input-group-append">
+            <button (click)="filterByPrice()" class="btn btn-success">Filter</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-3">
+        <label for="itemvagory" class="font-weight-bold">Item Category</label>
+        <select (change)="filterCategoryItems()" [(ngModel)]="selectValueByCategory"
+         class="form-control" name="itemAvailable" id="itemAvailable">
+          <option value="">--SELECT--</option>
+          <option value="stationary">Stationery</option>
+          <option value="grocery">Grocery</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="panel-body">
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th>Item No</th>
+              <th>Item Name</th>
+              <th>Item Category</th>
+              <th>Item Price</th>
+              <th>Item Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of items | async">
+              <td>{{item.itemId}}</td>
+              <td>{{item.item_name}}</td>
+              <td>{{item.item_category}}</td>
+              <td>{{item.item_price}}</td>
+              <td>{{item.item_status}}</td>
+              <td><button (click)="deletePost(item.itemId)" class="btn btn-danger btn-sm">Delete</button>
+                  <button (click)="updatePost(item.itemId)" class="btn btn-warning btn-sm">Update</button>
+                  <button (click)="postDetails(item.itemId)" class="btn btn-info btn-sm">Details</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    </div>
