@@ -7,8 +7,7 @@ Build the Spring boot back-end with Restful APIs and Angular front-end as well a
 01) Java 1.8 +
 02) Maven 3.8 +
 03) MYSQL
-04) NodeJS
-05) Angular
+04) Angular
 
 ## Project setup
 
